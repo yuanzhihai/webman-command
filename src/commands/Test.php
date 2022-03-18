@@ -3,10 +3,7 @@
 namespace yzh52521\command\commands;
 
 use Illuminate\Console\Command;
-/**
- *
- * @package yzh52521\command\commands
- */
+
 class Test extends Command
 {
     protected $signature = 'test';

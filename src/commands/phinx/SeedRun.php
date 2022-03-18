@@ -33,7 +33,7 @@ class SeedRun extends BaseCommand
             ->addOption('--seed', '-s', InputOption::VALUE_REQUIRED | InputOption::VALUE_IS_ARRAY, 'What is the name of the seeder?')
             ->setHelp(
                 <<<EOT
-The <info>seed:run</info> commands runs all available or individual seeders
+The <info>seed:run</info> command runs all available or individual seeders
 
 <info>phinx seed:run -e development</info>
 <info>phinx seed:run -e development -s UserSeeder</info>

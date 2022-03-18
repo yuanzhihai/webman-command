@@ -33,7 +33,7 @@ class Status extends BaseCommand
             ->addOption('--format', '-f', InputOption::VALUE_REQUIRED, 'The output format: text or json. Defaults to text.')
             ->setHelp(
                 <<<EOT
-The <info>status</info> commands prints a list of all migrations, along with their current status
+The <info>status</info> command prints a list of all migrations, along with their current status
 
 <info>phinx status -e development</info>
 <info>phinx status -e development -f json</info>

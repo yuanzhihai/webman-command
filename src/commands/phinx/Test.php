@@ -38,7 +38,7 @@ class Test extends BaseCommand
         $this->setDescription('Verify the configuration file')
             ->setHelp(
                 <<<EOT
-The <info>test</info> commands is used to verify the phinx configuration file and optionally an environment
+The <info>test</info> command is used to verify the phinx configuration file and optionally an environment
 
 <info>phinx test</info>
 <info>phinx test -e development</info>

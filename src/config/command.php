@@ -9,5 +9,6 @@ return [
     yzh52521\command\commands\phinx\SeedRun::class,
     yzh52521\command\commands\phinx\Status::class,
     yzh52521\command\commands\phinx\Test::class,
+
     yzh52521\command\commands\Test::class,
 ];

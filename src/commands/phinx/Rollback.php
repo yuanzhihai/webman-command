@@ -34,7 +34,7 @@ class Rollback extends BaseCommand
             ->addOption('--fake', null, InputOption::VALUE_NONE, "Mark any rollbacks selected as run, but don't actually execute them")
             ->setHelp(
                 <<<EOT
-The <info>rollback</info> commands reverts the last migration, or optionally up to a specific version
+The <info>rollback</info> command reverts the last migration, or optionally up to a specific version
 
 <info>phinx rollback -e development</info>
 <info>phinx rollback -e development -t 20111018185412</info>

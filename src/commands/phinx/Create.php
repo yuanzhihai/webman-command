@@ -3,6 +3,7 @@
 
 namespace yzh52521\command\commands\phinx;
 
+
 use Phinx\Config\NamespaceAwareInterface;
 use Phinx\Util\Util;
 use Symfony\Component\Console\Input\InputArgument;
@@ -201,7 +202,7 @@ class Create extends BaseCommand
             throw new InvalidArgumentException('Cannot define template:class and template:file at the same time');
         }
 
-        // Get the alternative template and static class options from the commands line, but only allow one of them.
+        // Get the alternative template and static class options from the command line, but only allow one of them.
         $altTemplate = $input->getOption('template');
         $creationClassName = $input->getOption('class');
         if ($altTemplate && $creationClassName) {

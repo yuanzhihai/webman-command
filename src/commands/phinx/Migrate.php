@@ -35,7 +35,7 @@ class Migrate extends BaseCommand
             ->addOption('--fake', null, InputOption::VALUE_NONE, "Mark any migrations selected as run, but don't actually execute them")
             ->setHelp(
                 <<<EOT
-The <info>migrate</info> commands runs all available migrations, optionally up to a specific version
+The <info>migrate</info> command runs all available migrations, optionally up to a specific version
 
 <info>phinx migrate -e development</info>
 <info>phinx migrate -e development -t 20110103081132</info>

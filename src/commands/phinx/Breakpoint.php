@@ -37,7 +37,7 @@ class Breakpoint extends BaseCommand
             ->addOption('--remove-all', '-r', InputOption::VALUE_NONE, 'Remove all breakpoints')
             ->setHelp(
                 <<<EOT
-The <info>breakpoint</info> commands allows you to toggle, set, or unset a breakpoint against a specific target to inhibit rollbacks beyond a certain target.
+The <info>breakpoint</info> command allows you to toggle, set, or unset a breakpoint against a specific target to inhibit rollbacks beyond a certain target.
 If no target is supplied then the most recent migration will be used.
 You cannot specify un-migrated targets
 

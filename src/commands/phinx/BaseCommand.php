@@ -1,5 +1,6 @@
 <?php
 
+
 namespace yzh52521\command\commands\phinx;
 
 use Phinx\Console\Command\AbstractCommand;

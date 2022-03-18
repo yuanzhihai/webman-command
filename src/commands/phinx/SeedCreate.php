@@ -169,7 +169,7 @@ class SeedCreate extends BaseCommand
             ));
         }
 
-        // Get the alternative template option from the commands line.
+        // Get the alternative template option from the command line.
         $altTemplate = $input->getOption('template');
 
         // Verify the alternative template file's existence.

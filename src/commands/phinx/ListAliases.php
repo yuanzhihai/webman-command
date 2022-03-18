@@ -28,7 +28,7 @@ class ListAliases extends BaseCommand
         parent::configure();
 
         $this->setDescription('List template class aliases')
-            ->setHelp('The <info>list:aliases</info> commands lists the migration template generation class aliases');
+            ->setHelp('The <info>list:aliases</info> command lists the migration template generation class aliases');
     }
 
     /**
