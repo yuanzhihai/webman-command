@@ -21,8 +21,8 @@ class Install
     {
         copy(__DIR__ . "/artisan", base_path() . "/artisan");
         chmod(base_path() . "/artisan", 0755);
-        copy(__DIR__ . '/config/phinx.php', base_path() . '/config/phinx.php');
-        copy(__DIR__ . '/config/command.php', base_path() . '/config/command.php');
+        copy(__DIR__ . '/config/phinx.php', config_path() . '/phinx.php');
+        copy(__DIR__ . '/config/command.php', config_path() . '/command.php');
         static::installByRelation();
     }
 
@@ -35,11 +35,11 @@ class Install
         if (is_file(base_path() . "/artisan")) {
             unlink(base_path() . "/artisan");
         }
-        if (is_file(base_path() . "/config/phinx.php")) {
-            unlink(base_path() . "/config/phinx.php");
+        if (is_file(config_path() . "/phinx.php")) {
+            unlink(config_path() . "/phinx.php");
         }
-        if (is_file(base_path() . "/config/command.php")) {
-            unlink(base_path() . "/config/command.php");
+        if (is_file(config_path() . "/command.php")) {
+            unlink(config_path() . "/command.php");
         }
         self::uninstallByRelation();
     }
