@@ -1,0 +1,28 @@
+{
+  "name": "yzh52521/webman-command",
+  "description": "webman Framework, Laravel console artisan",
+  "type": "library",
+  "license": "Apache-2.0",
+  "authors": [
+    {
+      "name": "yzh52521",
+      "email": "396751927@qq.com"
+    }
+  ],
+  "require": {
+    "php": ">=7.4",
+    "illuminate/events": "^8.0|^9.0",
+    "illuminate/console": "^8.0|^9.0",
+    "illuminate/database": "^8.0|^9.0",
+    "symfony/console": "^5.3|^6.0",
+    "robmorgan/phinx": "^0.12.5"
+  },
+  "autoload": {
+    "psr-4": {
+      "yzh52521\\command\\": "src/"
+    }
+  },
+  "require-dev": {
+    "workerman/webman": "^1.0"
+  }
+}

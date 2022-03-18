@@ -1,0 +1,17 @@
+#!/usr/bin/env php
+<?php
+require_once __DIR__ . '/vendor/autoload.php';
+require_once __DIR__ . '/support/bootstrap.php';
+
+use Illuminate\Container\Container;
+use Illuminate\Events\Dispatcher;
+use Illuminate\Console\Application;
+
+$container = new Container;
+$events = new Dispatcher($container);
+$artisan = new Application($container, $events, 'v1.0');
+$artisan->setName('webman for laravel cli');
+$artisan->resolveCommands(config('commands'));
+$artisan->setCatchExceptions(true);
+$artisan->run();
+
