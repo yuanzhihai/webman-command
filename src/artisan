@@ -11,7 +11,7 @@ $container = new Container;
 $events = new Dispatcher($container);
 $artisan = new Application($container, $events, 'v1.0');
 $artisan->setName('webman for laravel cli');
-$artisan->resolveCommands(config('commands'));
+$artisan->resolveCommands(config('command'));
 $artisan->setCatchExceptions(true);
 $artisan->run();
 
