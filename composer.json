@@ -11,10 +11,10 @@
   ],
   "require": {
     "php": ">=7.4",
-    "illuminate/events": "^8.0|^9.0",
-    "illuminate/console": "^8.0|^9.0",
-    "illuminate/database": "^8.0|^9.0",
-    "symfony/console": "^5.3|^6.0",
+    "illuminate/events": "^8.0",
+    "illuminate/console": "^8.0",
+    "illuminate/database": "^8.0",
+    "symfony/console": "^5.3",
     "robmorgan/phinx": "^0.12.5"
   },
   "autoload": {
