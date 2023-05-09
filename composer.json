@@ -14,8 +14,7 @@
     "illuminate/events": "^8.0|^9.0|^10.0",
     "illuminate/console": "^8.0|^9.0|^10.0",
     "illuminate/database": "^8.0|^9.0|^10.0",
-    "symfony/console": "^5.3|^6.0",
-    "robmorgan/phinx": "^0.13"
+    "symfony/console": "^5.3|^6.0"
   },
   "autoload": {
     "psr-4": {
