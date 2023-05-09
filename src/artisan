@@ -2,10 +2,12 @@
 <?php
 require_once __DIR__.'/vendor/autoload.php';
 
+use Symfony\Component\Console\Command\Command;
 use Illuminate\Container\Container;
 use Illuminate\Events\Dispatcher;
 use Illuminate\Console\Application;
 use Webman\Config;
+
 
 
 if (!in_array( $argv[1] ?? '',['start','restart','stop','status','reload','connections'] )) {
@@ -21,7 +23,36 @@ $container = new Container;
 $events    = new Dispatcher( $container );
 $artisan   = new Application( $container,$events,'v1.0' );
 $artisan->setName( 'webman for laravel cli' );
-$artisan->resolveCommands( config( 'command' ) );
+// 按目录扫描的命令
+$commandPaths = array_merge( [
+    app_path().'/command' => 'app\command',
+],config( 'command' ) );
+
+foreach ( $commandPaths as $path => $namespace ) {
+    if (!is_dir( $path )) {
+        continue;
+    }
+    $dir_iterator = new \RecursiveDirectoryIterator( $path );
+    $iterator     = new \RecursiveIteratorIterator( $dir_iterator );
+    foreach ( $iterator as $file ) {
+        /** @var \SplFileInfo $file */
+        if (strpos( $file->getFilename(),'.' ) === 0) {
+            continue;
+        }
+        if ($file->getExtension() !== 'php') {
+            continue;
+        }
+        $relativePath  = str_replace( str_replace( '/','\\',$path.'\\' ),'',str_replace( '/','\\',$file->getRealPath() ) );
+        $realNamespace = trim( $namespace.'\\'.trim( dirname( str_replace( '\\',DIRECTORY_SEPARATOR,$relativePath ) ),'.' ),'\\' );
+        $realNamespace = str_replace( '/','\\',$realNamespace );
+        $class_name    = trim( $realNamespace.'\\'.$file->getBasename( '.php' ),'\\' );
+        if (!class_exists( $class_name ) || !is_a( $class_name,Command::class,true )) {
+            continue;
+        }
+        $artisan->resolve( $class_name );
+    }
+
+}
 $artisan->setCatchExceptions( true );
 $artisan->run();
 

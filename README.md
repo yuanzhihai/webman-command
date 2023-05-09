@@ -12,10 +12,15 @@ illuminate/console
 illuminate/database
 illuminate/events
 ```
+命令扫描
+
+默认自动扫描 app\command 下的命令（同 webman/console 的逻辑）
+
 ### 配置命令
 
 config/command.php
 
+自定义命令
 
 ```
 return [
