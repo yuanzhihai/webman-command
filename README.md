@@ -24,8 +24,7 @@ config/command.php
 
 ```
 return [
-    //测试脚本
-    yzh52521\command\commands\Test::class,
+     \App\Commands\MyCommand::class,
 ];
 
 
@@ -33,8 +32,34 @@ return [
 
 #使用
 
-和laravel 使用一样
+新建命令
+
+```php
+namespace app\command;
+
+use Illuminate\Console\Command;
+
+class Test extends Command
+{
+    protected $signature = 'test';
+
+    protected $description = 'Test run command';
+
+    public function handle(): void
+    {
+        $this->info("test!");
+    }
+}
 ```
-php artisan command(命令) 
+
+调用 和laravel 使用一样
+```
+php artisan test 
+```
+业务中调用（比如控制器）
+
+```php
+use \yzh52521\command\facade\Artisan;
+Artisan::call('test');
 ```
 
