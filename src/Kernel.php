@@ -76,6 +76,9 @@ class Kernel
                 $app = new Application( $this->container,$this->container->get( DispatcherContract::class ),$this->config['version'] );
                 $app->setName( $this->config['name'] );
                 $app->setCatchExceptions( true );
+                if (method_exists($app, 'setContainerCommandLoader')) {
+                    $app->setContainerCommandLoader();
+                }
                 return $app;
             } );
         }
